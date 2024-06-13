@@ -1,0 +1,140 @@
+/* -- リセット系 -- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: calc(100vw / 1440 * 10);
+}
+
+// body {
+//   @include g.base-copy;
+//   color: g.$color-primary-text;
+//   background-color: g.$color-primary-bg;
+//   -webkit-font-smoothing: antialiased;
+//   overflow-x: clip;
+//   overscroll-behavior-y: none;
+//   position: relative;
+//   text-align: left;
+//   text-decoration: none;
+//   text-size-adjust: 100%;
+//   width: 100%;
+// }
+
+body {
+  overscroll-behavior: none;
+  // overflow: hidden;
+  width: 100vw;
+  // height: 100vh;
+  position: relative;
+  font-family: "Libre Baskerville", serif;
+  color: #fff;
+  // display: grid;
+  // place-content: center;
+  // place-items: center;
+}
+
+#webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  & canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 4rem;
+}
+.content {
+  // width: 900px;
+  // width: 300%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2rem;
+  padding-top: 14.5rem;
+  padding-bottom: 20rem;
+}
+
+.text {
+  position: absolute;
+  top: 8rem;
+  left: 4rem;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  width: 100%;
+  grid-column: 4/11;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  padding: 5rem 0;
+  // border-top: 1px solid #000;
+  position: relative;
+  // cursor: pointer;
+  border-bottom: 1px solid #fff;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2rem;
+  font-weight: 400;
+
+  p,
+  h2 {
+    pointer-events: none;
+  }
+  &:last-child {
+  }
+}
+
+.year {
+  grid-column: span 1;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.name {
+  grid-column: 3/7;
+  font-size: 2.6rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+img {
+  width: 100%;
+  // width: clamp(200px, 30rem, 250px);
+  width: 300px;
+  aspect-ratio: 1/1;
+  height: auto;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.plane {
+  width: 27.6rem;
+  aspect-ratio: 2/3;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
